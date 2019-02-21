@@ -125,7 +125,7 @@ public class RepositoryHandlerConfiguration {
 ```
 
 ## Verify Implementation
-As always, we will verify our implementation through an integration tests. In the following test we will create an `Author` 
+As always, we will verify our implementation through an [integration tests][10]. In the following test we will create an `Author` 
 with status `INACTIVE` and followed by creating a `Book` that ties to the `Author`.
 
 We will expect that it will return `Internal Server Error` with a message `book author must be active`:
@@ -184,3 +184,4 @@ With a correct implementation, the test above should pass.
 [7]: https://docs.spring.io/spring-data/rest/docs/current/api/org/springframework/data/rest/core/annotation/HandleBeforeCreate.html
 [8]: src/main/java/scratches/data/events/author/AuthorRepositoryEventHandler.java
 [9]: src/main/java/scratches/data/events/configuration/RepositoryHandlerConfiguration.java
+[10]: src/test/java/scratches/data/events/book/BookRepositoryRestTests.java
