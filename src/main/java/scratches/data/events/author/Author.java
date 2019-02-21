@@ -27,4 +27,13 @@ public class Author {
     @OneToMany(mappedBy = "author", cascade = CascadeType.REMOVE)
     private Set<Book> books;
 
+    private Status status;
+
+    public enum Status {
+
+        ACTIVE,
+
+        INACTIVE
+
+    }
 }
