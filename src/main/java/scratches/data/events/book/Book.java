@@ -1,13 +1,13 @@
-package scratches.data.events.author;
+package scratches.data.events.book;
 
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import scratches.data.events.book.Book;
+import scratches.data.events.author.Author;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.Set;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Rashidi Zin
@@ -15,16 +15,18 @@ import java.util.Set;
 @Entity
 @Data
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class Author {
+public class Book {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @NotBlank
-    private String name;
+    @JoinColumn
+    @ManyToOne(optional = false)
+    @NotNull
+    private Author author;
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.REMOVE)
-    private Set<Book> books;
+    @NotBlank
+    private String title;
 
 }
