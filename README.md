@@ -1,4 +1,4 @@
-# Spring Data REST with Event Example [![Build Status](https://travis-ci.org/rashidi/boot-data-rest-events-sample.svg?branch=master)](https://travis-ci.org/rashidi/boot-data-rest-events-sample)
+# Spring Data REST with Event Example
 Utilize events in [Spring Data REST][1] to perform pre and post operations with `@RepositoryEventHandler`.
 
 ## Background
