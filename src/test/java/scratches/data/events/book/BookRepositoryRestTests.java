@@ -1,12 +1,10 @@
 package scratches.data.events.book;
 
 import org.json.JSONObject;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import scratches.data.events.author.Author;
 
@@ -21,16 +19,15 @@ import static scratches.data.events.author.Author.Status.INACTIVE;
 /**
  * @author Rashidi Zin
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class BookRepositoryRestTests {
+class BookRepositoryRestTests {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void createBook() throws Exception {
+    void createBook() throws Exception {
         String authorUri = getAuthorUri(ACTIVE);
 
         JSONObject request = new JSONObject();
@@ -46,7 +43,7 @@ public class BookRepositoryRestTests {
     }
 
     @Test
-    public void createBookWithInactiveAuthor() throws Exception {
+    void createBookWithInactiveAuthor() throws Exception {
         String authorUri = getAuthorUri(INACTIVE);
 
         JSONObject request = new JSONObject();
